@@ -24,14 +24,17 @@ static NSString *passwordEncrypt = @"jgCKT39YDuKt5Sz6";
 -(NSString *)getLastUserIncome{
     NSUserDefaults *user_defaults = [self getUserDefaults];
     NSData *userData = [user_defaults objectForKey:LAST_USER_INGRESED];
-    userData = [RNCryptor decryptData:userData password:passwordEncrypt error:nil];
-    
-    NSString *user = [[NSString alloc] initWithData:userData encoding:NSUTF8StringEncoding];
-    if ([NSString isEmpty:user]) {
-        return @"";
+    if (userData != nil) {
+        userData = [RNCryptor decryptData:userData password:passwordEncrypt error:nil];
+        
+        NSString *user = [[NSString alloc] initWithData:userData encoding:NSUTF8StringEncoding];
+        if ([NSString isEmpty:user]) {
+            return @"";
+        }
+        return user;
     }
     
-    return user;
+    return @"";
 }
 
 -(void)setLastUserIncome:(NSString *)user{
@@ -47,14 +50,17 @@ static NSString *passwordEncrypt = @"jgCKT39YDuKt5Sz6";
 {
     NSUserDefaults *user_defaults = [self getUserDefaults];
     NSData *passwordData = [user_defaults objectForKey:PASSWORD_USER];
-    passwordData = [RNCryptor decryptData:passwordData password:passwordEncrypt error:nil];
-    
-    NSString *password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
-    if ([NSString isEmpty:password]) {
-        return @"";
+    if (passwordData != nil) {
+        passwordData = [RNCryptor decryptData:passwordData password:passwordEncrypt error:nil];
+        
+        NSString *password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+        if ([NSString isEmpty:password]) {
+            return @"";
+        }
+        return password;
     }
     
-    return password;
+    return @"";
 }
 
 -(void)setPasswordUserIncome:(NSString *)password
@@ -85,8 +91,12 @@ static NSString *passwordEncrypt = @"jgCKT39YDuKt5Sz6";
 - (NSMutableArray *)getListProduct{
     NSUserDefaults *user_defaults = [self getUserDefaults];
     NSData *data = [user_defaults objectForKey:LIST_PRODUCTS];
-    data = [RNCryptor decryptData:data password:passwordEncrypt error:nil];
-    NSArray *items = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSArray *items = [[NSArray alloc] init];
+    if (data != nil){
+        data = [RNCryptor decryptData:data password:passwordEncrypt error:nil];
+        items = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    
     NSMutableArray *list_products = [NSMutableArray arrayWithArray:items];
     return list_products;
 }
@@ -104,8 +114,11 @@ static NSString *passwordEncrypt = @"jgCKT39YDuKt5Sz6";
 - (NSMutableArray *)getListProductToUpdate{
     NSUserDefaults *user_defaults = [self getUserDefaults];
     NSData *data = [user_defaults objectForKey:LIST_PRODUCTS_TO_UPDATE];
-    data = [RNCryptor decryptData:data password:passwordEncrypt error:nil];
-    NSArray *items = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSArray *items = [[NSArray alloc] init];
+    if (data != nil){
+        data = [RNCryptor decryptData:data password:passwordEncrypt error:nil];
+        items = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
     NSMutableArray *list_products = [NSMutableArray arrayWithArray:items];
     return list_products;
 }

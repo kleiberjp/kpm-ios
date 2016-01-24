@@ -19,28 +19,16 @@
 */
 
 -(id)initWithView:(UIView *)toView{
-    
     self = [[LoadingView alloc] initWithFrame:toView.bounds];
     if(!self) return nil;
-    indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    localView = toView;
-    self.loadingLabel = [[UILabel alloc] init];
+    [self setContainerView:[[UIView alloc] init]];
+    [self setIndicatorView:[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge]];
+    [self setLocalView:toView];
+    [self setLoadingLabel:[[UILabel alloc] init]];
     
-    CGRect labelFrame = CGRectMake(0, 0, self.bounds.size.width - 60, 50);
-    
-    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-        localView.backgroundColor = [UIColor clearColor];
-        
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurEffectView.frame = localView.bounds;
-        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        [self addSubview:blurEffectView];
-    }
-    else {
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
-    }
+    const CGFloat DEFAULT_LABEL_WIDTH = toView.frame.size.width - 60;
+    const CGFloat DEFAULT_LABEL_HEIGHT = 50.0;
+    CGRect labelFrame = CGRectMake(0,0, DEFAULT_LABEL_WIDTH, DEFAULT_LABEL_HEIGHT);
     
     self.loadingLabel = [[UILabel alloc] initWithFrame:labelFrame];
     self.loadingLabel.textColor = [UIColor lightGrayColor];
@@ -50,41 +38,54 @@
     self.loadingLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     
     
-    indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicatorView.backgroundColor = [UIColor clearColor];
-    indicatorView.color = [UIColor lightGrayColor];
-    indicatorView.autoresizingMask =
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.indicatorView.backgroundColor = [UIColor clearColor];
+    self.indicatorView.color = [UIColor lightGrayColor];
+    self.indicatorView.autoresizingMask =
     UIViewAutoresizingFlexibleLeftMargin |
     UIViewAutoresizingFlexibleRightMargin |
     UIViewAutoresizingFlexibleTopMargin |
     UIViewAutoresizingFlexibleBottomMargin;
-    [indicatorView startAnimating];
+    [self.indicatorView startAnimating];
     
-    CGFloat totalHeight = self.loadingLabel.frame.size.height + indicatorView.frame.size.height;
-    labelFrame.origin.x = floor(0.5 * (self.frame.size.width - (self.frame.size.width-60)));
+    CGFloat totalHeight = self.loadingLabel.frame.size.height + self.indicatorView.frame.size.height;
+    labelFrame.origin.x = floor(0.5 * (self.frame.size.width - DEFAULT_LABEL_WIDTH));
     labelFrame.origin.y = floor(0.5 * (self.frame.size.height - totalHeight));
     self.loadingLabel.frame = labelFrame;
     
-    CGRect activityIndicatorRect = indicatorView.frame;
+    CGRect activityIndicatorRect = self.indicatorView.frame;
     activityIndicatorRect.origin.x = 0.5 * (self.frame.size.width - activityIndicatorRect.size.width);
     activityIndicatorRect.origin.y = self.loadingLabel.frame.origin.y + self.loadingLabel.frame.size.height;
-    indicatorView.frame = activityIndicatorRect;
+    self.indicatorView.frame = activityIndicatorRect;
     
-
-    [self addSubview:indicatorView];
+    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+        self.localView.backgroundColor = [UIColor clearColor];
+        
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        self.blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        self.blurEffectView.frame = self.localView.bounds;
+        self.blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [self addSubview:self.blurEffectView];
+    }
+    else {
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+    }
+    
+    [self addSubview:self.indicatorView];
     [self addSubview:self.loadingLabel];
     
     return self;
 }
 
 -(void)showLoadingView{
-    [indicatorView startAnimating];
-    [localView addSubview:self];
+    [self.indicatorView startAnimating];
+    [self.localView addSubview:self];
     
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionFade];
     
-    [[localView layer] addAnimation:animation forKey:@"layerAnimation"];
+    [[self.localView layer] addAnimation:animation forKey:@"layerAnimation"];
 }
 
 -(void)removeLoadingView{

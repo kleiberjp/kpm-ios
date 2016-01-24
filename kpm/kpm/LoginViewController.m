@@ -55,8 +55,7 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             BOOL result= [self.services loginUser:self.tfUserName.text withPassword:self.tfPassword.text];
             if (result) {
-                [super showAlert:@"INFO" withMessage:@"Login Success"];
-                //[self performSegueWithIdentifier:@"goToMain" sender:self];
+                [self performSegueWithIdentifier:@"goToMain" sender:self];
                 return;
             }
         });
@@ -80,12 +79,6 @@
         [self.tfUserName becomeFirstResponder];
         [self.tfUserName setError:[NSString getMessageTextError:@"field-required"]];
         error = YES;
-    } else {
-        if (![self validateEmail:self.tfUserName]) {
-            [self.tfUserName becomeFirstResponder];
-            [self.tfUserName setError:[NSString getMessageTextError:@"mail-invalid"]];
-            error = YES;
-        }
     }
     
     if (error) {

@@ -1,0 +1,30 @@
+
+/* Class = "UITextField"; placeholder = "Username or email"; ObjectID = "AkG-tn-ZVV"; */
+"AkG-tn-ZVV.placeholder" = "Username";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BUi-b9-Lf3"; */
+"BUi-b9-Lf3.text" = "Label";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "Taj-lY-n8q"; */
+"Taj-lY-n8q.text" = "50";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aG2-Pg-vJq"; */
+"aG2-Pg-vJq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Log-in"; ObjectID = "aLn-B2-god"; */
+"aLn-B2-god.normalTitle" = "Log-in";
+
+/* Class = "UILabel"; text = "Cost"; ObjectID = "eas-mO-QaT"; */
+"eas-mO-QaT.text" = "Cost";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "lNf-4s-TQx"; */
+"lNf-4s-TQx.title" = "Root View Controller";
+
+/* Class = "UILabel"; text = "Product"; ObjectID = "mKP-Ap-mWT"; */
+"mKP-Ap-mWT.text" = "Product";
+
+/* Class = "UILabel"; text = "Quantity"; ObjectID = "odS-9y-qtz"; */
+"odS-9y-qtz.text" = "Quantity";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "yZq-RU-mzq"; */
+"yZq-RU-mzq.placeholder" = "Password";

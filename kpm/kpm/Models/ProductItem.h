@@ -6,8 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
+#import <UIKit/UIKit.h>
 
 @interface ProductItem : NSObject <NSCoding, NSCopying>
 

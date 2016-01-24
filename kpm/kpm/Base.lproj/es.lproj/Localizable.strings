@@ -1,0 +1,16 @@
+"cancel-button" = "CANCELAR";
+"continue-button" = "CONTINUAR";
+"field-required" = "Este campo es requerido";
+"mail-invalid" = "Ingrese un email valido";
+"message-alert-add" = "¿Estas seguro que quieres agregar otro item al producto %@ ?";
+"message-logout" = "¿Estás seguro quieres cerrar sesión? :(, ¿Qué tal si te quedas un rato más ?";
+"message-success-update" = "Todos los productos fueron actualizados exitosamente =)";
+"message-wrong-update" = "Hubo una falla, no todos los productos fuerón actualizados. Aún quedan %d productos by actualizar. Vuelve a intentar en unos minutos.";
+"no-products-update" = "Aparentemente todo esta bien, no hay productos para actualizar. Bien por tí =)";
+"invalid login parameters" = "EL usuario y contraseña que ingresastes son invalidos. Revisa tus datos e intenta nuevamente";
+"title-alert-item" = "NUEVO ITEM";
+"title-list-products" = "Listado de Productos";
+"title-logout" = "Cerrar sesión";
+"title-success" = "Exitos";
+"wait" = "Espera un momento, por favor...";
+"yes-button" = "SI";

@@ -115,15 +115,7 @@
 }
 
 - (BOOL)validateEmptyField:(UITextField *)uiTextField {
-    if (uiTextField.text.length == 0 || [uiTextField.text isEqualToString:@""]) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
-- (BOOL)validateEmail:(UITextField *)uiTextField {
-    return [uiTextField.text stringIsValidEmailAddress];
+    return ![NSString isEmpty:uiTextField.text];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

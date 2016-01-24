@@ -20,6 +20,6 @@
 -(instancetype) initWithSuperView:(UIViewController *) view;
 - (BOOL) loginUser:(NSString *)username withPassword:(NSString *)password;
 - (NSMutableArray *) getProducts;
-- (BOOL) updateProducts:(NSMutableArray *)products;
+- (void) updateProducts;
 
 @end

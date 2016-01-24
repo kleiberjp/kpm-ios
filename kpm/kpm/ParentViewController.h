@@ -29,7 +29,6 @@
 #pragma methods generic view controller
 - (void)hideNavigationBar;
 - (BOOL)validateEmptyField:(UITextField *)uiTextField;
-- (BOOL)validateEmail:(UITextField *)uiTextField;
 
 
 @end

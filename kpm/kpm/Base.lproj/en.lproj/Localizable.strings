@@ -1,0 +1,16 @@
+"cancel-button" = "CANCEL";
+"continue-button" = "CONTINUE";
+"field-required" = "This field is required";
+"mail-invalid" = "Enter a valid email";
+"message-alert-add" = "Are you sure want add another item to the product %@";
+"message-logout" = "Are you sure want to log out? :(, what if you stay a little longer?";
+"message-success-update" = "All products were updated successfully =)";
+"message-wrong-update" = "There was a failure, not all products were updated. There are still %d products for upgrade. What if you try later.";
+"no-products-update" = "Apparently everything is exactly right, no products to upgrade. Good for you =)";
+"invalid login parameters" = "The email and password entered are invalid, please check your data and try again";
+"title-alert-item" = "NEW ITEM";
+"title-list-products" = "List Products";
+"title-logout" = "Log out";
+"title-success" = "Success";
+"wait" = "Wait a moment, please...";
+"yes-button" = "YES";

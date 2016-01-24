@@ -1,8 +1,0 @@
-"cancel-button" = "CANCEL";
-"continue-button" = "CONTINUE";
-"field-required" = "This field is required";
-"mail-invalid" = "Enter a valid email";
-"message-logout" = "Are you sure want to log out? :(, what if you stay a little longer?";
-"non_field_errors" = "The email and password entered are invalid, please check your data and try again";
-"title-logout" = "Log out";
-"wait" = "Wait a moment, please...";

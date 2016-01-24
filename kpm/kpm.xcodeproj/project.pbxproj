@@ -26,7 +26,9 @@
 		017F39941C546296002461D9 /* UIViewController+ViewControllerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39931C546296002461D9 /* UIViewController+ViewControllerExtension.m */; };
 		017F399A1C546F84002461D9 /* UITextField+TextFieldExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */; };
 		017F399D1C547097002461D9 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F399C1C547097002461D9 /* ParentViewController.m */; };
-		017F39A11C54762F002461D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017F39A01C54762F002461D9 /* Localizable.strings */; };
+		017F39A21C547885002461D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017F39A41C547885002461D9 /* Localizable.strings */; };
+		017F39AF1C548BED002461D9 /* ProductViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39AE1C548BED002461D9 /* ProductViewCell.m */; };
+		017F39B51C5494EB002461D9 /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39B41C5494EB002461D9 /* ProductsTableViewController.m */; };
 		765ED04B81CE700A3E1C9C86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3E81C11CB8B9E72F79B53 /* Pods.framework */; };
 		B3BC46F413D6F897D5B1F1DA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		EC0AA9935A9EE6A828BFE237 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3E81C11CB8B9E72F79B53 /* Pods.framework */; };
@@ -56,7 +58,6 @@
 		017F39451C54007A002461D9 /* kpmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kpmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		017F39491C54007A002461D9 /* kpmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kpmTests.m; sourceTree = "<group>"; };
 		017F394B1C54007A002461D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		017F39581C540AB0002461D9 /* kpm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = kpm.entitlements; sourceTree = "<group>"; };
 		017F395A1C541ECF002461D9 /* connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connection.json; sourceTree = "<group>"; };
 		017F395C1C5427AA002461D9 /* DataJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataJson.h; path = Core/DataJson.h; sourceTree = "<group>"; };
 		017F395D1C5427AB002461D9 /* DataJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataJson.m; path = Core/DataJson.m; sourceTree = "<group>"; };
@@ -81,7 +82,17 @@
 		017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+TextFieldExtension.m"; path = "UIControls/UITextField+TextFieldExtension.m"; sourceTree = "<group>"; };
 		017F399B1C547097002461D9 /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
 		017F399C1C547097002461D9 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
-		017F39A01C54762F002461D9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		017F39A31C547885002461D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		017F39A51C54788D002461D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		017F39A71C5478A1002461D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		017F39A91C5478AA002461D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		017F39AA1C5478B9002461D9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		017F39AB1C5478B9002461D9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		017F39AC1C5478B9002461D9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		017F39AD1C548BED002461D9 /* ProductViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductViewCell.h; path = UIControls/ProductViewCell.h; sourceTree = "<group>"; };
+		017F39AE1C548BED002461D9 /* ProductViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductViewCell.m; path = UIControls/ProductViewCell.m; sourceTree = "<group>"; };
+		017F39B31C5494EB002461D9 /* ProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableViewController.h; sourceTree = "<group>"; };
+		017F39B41C5494EB002461D9 /* ProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableViewController.m; sourceTree = "<group>"; };
 		27C3E81C11CB8B9E72F79B53 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA7B15B9411D45C2D2D676E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC98FD3F95D410E6428D9B35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +142,6 @@
 		017F392E1C54007A002461D9 /* kpm */ = {
 			isa = PBXGroup;
 			children = (
-				017F39581C540AB0002461D9 /* kpm.entitlements */,
 				017F39561C54066C002461D9 /* UIControls */,
 				017F39551C540614002461D9 /* Core */,
 				017F39541C540607002461D9 /* Models */,
@@ -146,7 +156,7 @@
 		017F392F1C54007A002461D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				017F39A01C54762F002461D9 /* Localizable.strings */,
+				017F39A41C547885002461D9 /* Localizable.strings */,
 				017F39381C54007A002461D9 /* Main.storyboard */,
 				017F393B1C54007A002461D9 /* Assets.xcassets */,
 				017F393D1C54007A002461D9 /* LaunchScreen.storyboard */,
@@ -203,6 +213,8 @@
 				017F39931C546296002461D9 /* UIViewController+ViewControllerExtension.m */,
 				017F39981C546F84002461D9 /* UITextField+TextFieldExtension.h */,
 				017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */,
+				017F39AD1C548BED002461D9 /* ProductViewCell.h */,
+				017F39AE1C548BED002461D9 /* ProductViewCell.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -214,6 +226,8 @@
 				017F39361C54007A002461D9 /* LoginViewController.m */,
 				017F399B1C547097002461D9 /* ParentViewController.h */,
 				017F399C1C547097002461D9 /* ParentViewController.m */,
+				017F39B31C5494EB002461D9 /* ProductsTableViewController.h */,
+				017F39B41C5494EB002461D9 /* ProductsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -294,10 +308,10 @@
 						DevelopmentTeam = ZD6HC7L498;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -314,6 +328,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 017F39231C540079002461D9;
 			productRefGroup = 017F392D1C54007A002461D9 /* Products */;
@@ -331,7 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017F39A11C54762F002461D9 /* Localizable.strings in Resources */,
+				017F39A21C547885002461D9 /* Localizable.strings in Resources */,
 				017F393F1C54007A002461D9 /* LaunchScreen.storyboard in Resources */,
 				017F393C1C54007A002461D9 /* Assets.xcassets in Resources */,
 				017F393A1C54007A002461D9 /* Main.storyboard in Resources */,
@@ -449,6 +464,7 @@
 				017F39371C54007A002461D9 /* LoginViewController.m in Sources */,
 				017F397F1C544E97002461D9 /* LoadingView.m in Sources */,
 				017F399D1C547097002461D9 /* ParentViewController.m in Sources */,
+				017F39B51C5494EB002461D9 /* ProductsTableViewController.m in Sources */,
 				017F395E1C5427AB002461D9 /* DataJson.m in Sources */,
 				017F39341C54007A002461D9 /* AppDelegate.m in Sources */,
 				017F39821C544EEF002461D9 /* UIView+ViewExtension.m in Sources */,
@@ -459,6 +475,7 @@
 				017F399A1C546F84002461D9 /* UITextField+TextFieldExtension.m in Sources */,
 				017F39941C546296002461D9 /* UIViewController+ViewControllerExtension.m in Sources */,
 				017F397C1C544DA7002461D9 /* ProductItem.m in Sources */,
+				017F39AF1C548BED002461D9 /* ProductViewCell.m in Sources */,
 				017F39851C544F1C002461D9 /* UIImage+ImageExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +503,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				017F39391C54007A002461D9 /* Base */,
+				017F39A71C5478A1002461D9 /* en */,
+				017F39AA1C5478B9002461D9 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -494,8 +513,21 @@
 			isa = PBXVariantGroup;
 			children = (
 				017F393E1C54007A002461D9 /* Base */,
+				017F39A91C5478AA002461D9 /* en */,
+				017F39AB1C5478B9002461D9 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		017F39A41C547885002461D9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				017F39A31C547885002461D9 /* Base */,
+				017F39A51C54788D002461D9 /* en */,
+				017F39AC1C5478B9002461D9 /* es */,
+			);
+			name = Localizable.strings;
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -588,7 +620,6 @@
 			baseConfigurationReference = 5FA7B15B9411D45C2D2D676E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kpm/kpm.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kpm/Info.plist;
@@ -604,7 +635,6 @@
 			baseConfigurationReference = FC98FD3F95D410E6428D9B35 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kpm/kpm.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kpm/Info.plist;

@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoadingView : UIView{
-    UIView *localView;
-    UIActivityIndicatorView *indicatorView;
-    UIVisualEffectView *blurEffectView;
-}
+@interface LoadingView : UIView
 
 @property UILabel *loadingLabel;
+@property UIView *localView, *containerView;
+@property UIActivityIndicatorView *indicatorView;
+@property UIVisualEffectView *blurEffectView;
 
 -(id) initWithView:(UIView *)toView;
 -(void) showLoadingView;
