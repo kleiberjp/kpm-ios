@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		017F39311C54007A002461D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39301C54007A002461D9 /* main.m */; };
 		017F39341C54007A002461D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39331C54007A002461D9 /* AppDelegate.m */; };
-		017F39371C54007A002461D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39361C54007A002461D9 /* ViewController.m */; };
+		017F39371C54007A002461D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39361C54007A002461D9 /* LoginViewController.m */; };
 		017F393A1C54007A002461D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F39381C54007A002461D9 /* Main.storyboard */; };
 		017F393C1C54007A002461D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017F393B1C54007A002461D9 /* Assets.xcassets */; };
 		017F393F1C54007A002461D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F393D1C54007A002461D9 /* LaunchScreen.storyboard */; };
@@ -24,6 +24,9 @@
 		017F398B1C545A7E002461D9 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F398A1C545A7E002461D9 /* UserDefaults.m */; };
 		017F39911C545BE4002461D9 /* NSString+StringExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39901C545BE4002461D9 /* NSString+StringExtension.m */; };
 		017F39941C546296002461D9 /* UIViewController+ViewControllerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39931C546296002461D9 /* UIViewController+ViewControllerExtension.m */; };
+		017F399A1C546F84002461D9 /* UITextField+TextFieldExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */; };
+		017F399D1C547097002461D9 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F399C1C547097002461D9 /* ParentViewController.m */; };
+		017F39A11C54762F002461D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017F39A01C54762F002461D9 /* Localizable.strings */; };
 		765ED04B81CE700A3E1C9C86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3E81C11CB8B9E72F79B53 /* Pods.framework */; };
 		B3BC46F413D6F897D5B1F1DA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		EC0AA9935A9EE6A828BFE237 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3E81C11CB8B9E72F79B53 /* Pods.framework */; };
@@ -44,8 +47,8 @@
 		017F39301C54007A002461D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		017F39321C54007A002461D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		017F39331C54007A002461D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		017F39351C54007A002461D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		017F39361C54007A002461D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		017F39351C54007A002461D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		017F39361C54007A002461D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		017F39391C54007A002461D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		017F393B1C54007A002461D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		017F393E1C54007A002461D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +77,11 @@
 		017F39901C545BE4002461D9 /* NSString+StringExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+StringExtension.m"; path = "UIControls/NSString+StringExtension.m"; sourceTree = "<group>"; };
 		017F39921C546296002461D9 /* UIViewController+ViewControllerExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ViewControllerExtension.h"; path = "UIControls/UIViewController+ViewControllerExtension.h"; sourceTree = "<group>"; };
 		017F39931C546296002461D9 /* UIViewController+ViewControllerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ViewControllerExtension.m"; path = "UIControls/UIViewController+ViewControllerExtension.m"; sourceTree = "<group>"; };
+		017F39981C546F84002461D9 /* UITextField+TextFieldExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+TextFieldExtension.h"; path = "UIControls/UITextField+TextFieldExtension.h"; sourceTree = "<group>"; };
+		017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+TextFieldExtension.m"; path = "UIControls/UITextField+TextFieldExtension.m"; sourceTree = "<group>"; };
+		017F399B1C547097002461D9 /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
+		017F399C1C547097002461D9 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
+		017F39A01C54762F002461D9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		27C3E81C11CB8B9E72F79B53 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA7B15B9411D45C2D2D676E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC98FD3F95D410E6428D9B35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 		017F392F1C54007A002461D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				017F39A01C54762F002461D9 /* Localizable.strings */,
 				017F39381C54007A002461D9 /* Main.storyboard */,
 				017F393B1C54007A002461D9 /* Assets.xcassets */,
 				017F393D1C54007A002461D9 /* LaunchScreen.storyboard */,
@@ -192,6 +201,8 @@
 				017F39901C545BE4002461D9 /* NSString+StringExtension.m */,
 				017F39921C546296002461D9 /* UIViewController+ViewControllerExtension.h */,
 				017F39931C546296002461D9 /* UIViewController+ViewControllerExtension.m */,
+				017F39981C546F84002461D9 /* UITextField+TextFieldExtension.h */,
+				017F39991C546F84002461D9 /* UITextField+TextFieldExtension.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -199,8 +210,10 @@
 		017F39571C540682002461D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				017F39351C54007A002461D9 /* ViewController.h */,
-				017F39361C54007A002461D9 /* ViewController.m */,
+				017F39351C54007A002461D9 /* LoginViewController.h */,
+				017F39361C54007A002461D9 /* LoginViewController.m */,
+				017F399B1C547097002461D9 /* ParentViewController.h */,
+				017F399C1C547097002461D9 /* ParentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -318,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017F39A11C54762F002461D9 /* Localizable.strings in Resources */,
 				017F393F1C54007A002461D9 /* LaunchScreen.storyboard in Resources */,
 				017F393C1C54007A002461D9 /* Assets.xcassets in Resources */,
 				017F393A1C54007A002461D9 /* Main.storyboard in Resources */,
@@ -432,8 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017F39371C54007A002461D9 /* ViewController.m in Sources */,
+				017F39371C54007A002461D9 /* LoginViewController.m in Sources */,
 				017F397F1C544E97002461D9 /* LoadingView.m in Sources */,
+				017F399D1C547097002461D9 /* ParentViewController.m in Sources */,
 				017F395E1C5427AB002461D9 /* DataJson.m in Sources */,
 				017F39341C54007A002461D9 /* AppDelegate.m in Sources */,
 				017F39821C544EEF002461D9 /* UIView+ViewExtension.m in Sources */,
@@ -441,6 +456,7 @@
 				017F39911C545BE4002461D9 /* NSString+StringExtension.m in Sources */,
 				017F398B1C545A7E002461D9 /* UserDefaults.m in Sources */,
 				017F39311C54007A002461D9 /* main.m in Sources */,
+				017F399A1C546F84002461D9 /* UITextField+TextFieldExtension.m in Sources */,
 				017F39941C546296002461D9 /* UIViewController+ViewControllerExtension.m in Sources */,
 				017F397C1C544DA7002461D9 /* ProductItem.m in Sources */,
 				017F39851C544F1C002461D9 /* UIImage+ImageExtension.m in Sources */,
