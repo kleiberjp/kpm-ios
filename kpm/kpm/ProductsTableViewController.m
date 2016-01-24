@@ -176,11 +176,7 @@ NSMutableArray *productsToUpdate;
     [self showLoadingView];
     [self.services.userDefaults setAlreadyLoged:NO];
     [self.services.userDefaults setPasswordUserIncome:@""];
-    [UIView animateWithDuration:5.0f animations:^{
-        [self hideLoadingView];
-    } completion:^(BOOL finished) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    [self performSegueWithIdentifier:@"backToLogin" sender:self];
 }
 
 - (void) addItemQuantity:(UIButton *) sender{

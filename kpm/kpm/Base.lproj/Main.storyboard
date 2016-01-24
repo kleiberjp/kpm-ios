@@ -88,6 +88,7 @@
                             <constraint firstItem="HAF-JE-08Q" firstAttribute="bottom" secondItem="HTF-LQ-VLa" secondAttribute="top" id="rbk-1f-0J2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0TX-nO-P6Q"/>
                     <connections>
                         <outlet property="tfPassword" destination="yZq-RU-mzq" id="AZ1-Vs-CUD"/>
                         <outlet property="tfUserName" destination="AkG-tn-ZVV" id="YAS-4F-M54"/>
@@ -219,6 +220,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lNf-4s-TQx"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="backToLogin" id="iKt-K1-lEh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfe-7k-erD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

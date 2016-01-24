@@ -34,6 +34,8 @@
 - (BOOL)loginUser:(NSString *)username withPassword:(NSString *)password{
     __block BOOL success = false;
     dispatch_group_t group = dispatch_group_create();
+    
+    LoadingView *loadingView = [[LoadingView alloc] initWithView:self.superView.view.superview];
 
     NSString *URLString = [self.services getAddressLogin];
     NSDictionary *parameters = @{@"username": username, @"password": password};
@@ -47,7 +49,7 @@
     [request addValue:[self.services getAppKeyRestService] forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.superView showLoadingView];
+        [loadingView showLoadingView];
     });
     
     dispatch_group_enter(group);
@@ -71,7 +73,7 @@
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.superView hideLoadingView];
+        [loadingView removeLoadingView];
     });
     
     return success;
@@ -130,7 +132,7 @@
     NSMutableArray *listProducts = [self.userDefaults getListProductToUpdate];
     NSMutableArray *discardedItems = [NSMutableArray array];
 
-    __block int errors;
+    __block int errors = 0;
     
     if (listProducts == nil || listProducts.count == 0) {
     
