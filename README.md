@@ -30,7 +30,7 @@ Application example for consumpition REST Services and offline work app
 The project use CocoaPods for the library so before open the project and run at an emulator code
 
       cd kpm/
-      pod init
+      pod install
       
 
 Once installed all libraries just open xcorkspace structure for the project recognize the Pod Files 
