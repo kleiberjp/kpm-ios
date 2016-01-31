@@ -10,6 +10,8 @@
 
 @interface UIImage (ImageExtension)
 
+#pragma Mark - Methods for effects for image
+
 - (UIImage *)applyLightEffect;
 - (UIImage *)applyExtraLightEffect;
 - (UIImage *)applyDarkEffect;
@@ -17,5 +19,10 @@
 - (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage *)maskImage;
 - (UIImage *)cropImage:(CGRect)rect;
 - (UIImage *)blurWithImageEffects;
+
+#pragma Mark - Methods for changing aspect image
+
+- (UIImage *)imageTintedWithColor:(UIColor *)color;
+
 
 @end

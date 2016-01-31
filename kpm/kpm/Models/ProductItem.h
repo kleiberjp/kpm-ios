@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) NSString *createdAt;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, retain) UIImage *image;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

@@ -12,31 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+RJLoader.h"
 #import "UIViewController+ViewControllerExtension.h"
-#import <objc/runtime.h>
-
-@interface NSObject (Associating)
-
-@property (nonatomic, retain) id associatedObject;
-
-@end
-
-@implementation NSObject (Associating)
-
-- (id)associatedObject
-{
-    return objc_getAssociatedObject(self, @selector(associatedObject));
-}
-
-- (void)setAssociatedObject:(id)associatedObject
-{
-    objc_setAssociatedObject(self,
-                             @selector(associatedObject),
-                             associatedObject,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
-
+#import "UIImage+ImageExtension.h"
 
 @interface ProductsTableViewController ()
 
@@ -238,9 +214,40 @@ NSMutableArray *productsToUpdate;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
     ProductItem *item = [self.products objectAtIndex:indexPath.row];
+    cell.imgProduct.contentMode = UIViewContentModeScaleAspectFit;
     
+    if (item.image) {
+        cell.imgProduct.image = item.image;
+    }else{
+        NSURL *url = [NSURL URLWithString:item.imageURL];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_async(queue, ^(void) {
+            UIImage *notImg = [[UIImage imageNamed:@"ImgNotAvaliable"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            notImg = [notImg imageTintedWithColor:[UIColor colorWithRed:0.302 green:0.765 blue:0.643 alpha:1]];
+            [cell.imgProduct startLoaderWithTintColor:[UIColor colorWithRed:0.302 green:0.765 blue:0.643 alpha:1]];
+            [cell.imgProduct sd_setImageWithURL:url
+                               placeholderImage:notImg
+                                        options:SDWebImageCacheMemoryOnly | SDWebImageRefreshCached
+                                       progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                           [cell.imgProduct updateImageDownloadProgress:(CGFloat)receivedSize/expectedSize];
+                                       }
+                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                          if (image) {
+                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                  item.image = image;
+                                                  [self.products replaceObjectAtIndex:indexPath.row withObject:item];
+                                                  [self.services.userDefaults setListProducts:self.products];
+                                                  cell.imgProduct.image = image;
+                                                  [cell.imgProduct reveal];
+                                                  [cell setNeedsLayout];
+                                              });
+                                          }
+                                      }
+             ];
+        });
+    }
+
     UIImageView *addIcon = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"Add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     addIcon.tintColor = [UIColor colorWithRed:0.302 green:0.765 blue:0.643 alpha:1];
     [cell.btnProductAdd addSubview:addIcon];
@@ -251,32 +258,10 @@ NSMutableArray *productsToUpdate;
     
     cell.btnProductAdd.tag = indexPath.row;
     [cell.btnProductAdd addTarget:self action:@selector(addItemQuantity:) forControlEvents:UIControlEventTouchUpInside];
-    
-    cell.imgProduct.contentMode = UIViewContentModeScaleAspectFit;
-    cell.imgProduct.associatedObject = item.imageURL;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^(void) {
-        [cell.imgProduct startLoaderWithTintColor:[UIColor colorWithRed:0.302 green:0.765 blue:0.643 alpha:1]];
-        [cell.imgProduct sd_setImageWithURL:[NSURL URLWithString:item.imageURL]
-                       placeholderImage:cell.imgProduct.image
-                                options:SDWebImageCacheMemoryOnly | SDWebImageRefreshCached
-                               progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                   [cell.imgProduct updateImageDownloadProgress:(CGFloat)receivedSize/expectedSize];
-                               }
-                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                      if ([cell.imgProduct.associatedObject isEqualToString:item.imageURL])
-                                      {
-                                          [cell.imgProduct reveal];
-                                          [cell setNeedsLayout];
-                                      }
-                                  });
-                              }
-         ];
-    });
-    
     return cell;
 }
+
+
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
